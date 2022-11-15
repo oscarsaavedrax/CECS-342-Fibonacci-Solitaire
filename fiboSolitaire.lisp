@@ -6,10 +6,14 @@
 ;;;; I certify that this program is my own original work. I did not copy any part of this 
 ;;;; program from any other source. I further certify that I typed each and every line of 
 ;;;; code in this program.
+
+; Set the print case to capitalize
 (setq *print-case* :capitalize)
 
+; Variable for menu selection
 (defvar *menuChoice*)
-;;; Prints the menu
+
+; Function to print the menu
 (defun print-menu ()
     (format t "Welcome to Fibonacci Solitarie!~%")
     (format t "1) New Deck~%")
@@ -18,14 +22,16 @@
     (format t "4) Play Solitarie~%")
     (format t "5) Exit~%"))
 
+; Print menu
 (print-menu)
+; Get user choice for menu
 (format t "Please enter your choice (1-5): ")
-
 (setq menuChoice (read))
 
+; Branch to menu selection
 (case menuChoice 
     (1 (format t "You selected New Deck~%"))
     (2 (format t "You selected Display Deck~%"))
-    (3  (format t "You selected Shuffle Deck~%"))
-    (4  (format t "You selected Play Solitarie~%"))
-    (5  (format t "You selected Exit~%")))
+    (3 (format t "You selected Shuffle Deck~%"))
+    (4 (format t "You selected Play Solitarie~%"))
+    (5 (format t "You selected Exit~%")))
