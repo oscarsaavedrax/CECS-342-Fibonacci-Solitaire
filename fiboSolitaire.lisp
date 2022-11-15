@@ -8,6 +8,8 @@
 ;;;; code in this program.
 (setq *print-case* :capitalize)
 
+(defvar *menuChoice*)
+;;; Prints the menu
 (defun print-menu ()
     (format t "Welcome to Fibonacci Solitarie!~%")
     (format t "1) New Deck~%")
@@ -17,3 +19,13 @@
     (format t "5) Exit~%"))
 
 (print-menu)
+(format t "Please enter your choice (1-5): ")
+
+(setq menuChoice (read))
+
+(case menuChoice 
+    (1 (format t "You selected New Deck~%"))
+    (2 (format t "You selected Display Deck~%"))
+    (3  (format t "You selected Shuffle Deck~%"))
+    (4  (format t "You selected Play Solitarie~%"))
+    (5  (format t "You selected Exit~%")))
