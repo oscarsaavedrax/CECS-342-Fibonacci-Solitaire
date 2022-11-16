@@ -40,9 +40,9 @@
 ; Function to set the new-deck equal to playing deck
 (defun selected-new-deck (new-deck)
     (format t "You selected a New Deck~%")
-    (format t "Here is the new unshuffled deck~%")
     (setf *playing-deck* (copy-list new-deck))
-    (print-deck *playing-deck*)
+    (format t "New Deck initialized~%")
+    (format t "Ready to play!~%")
     (terpri))
     
 ; Print menu
@@ -71,4 +71,5 @@
     (terpri)
 )
 
+; Print the good bye message
 (format t "Thank you for playing Fibonacci Solitarie!~%")
