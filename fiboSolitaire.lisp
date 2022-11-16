@@ -20,18 +20,29 @@
     (format t "2) Display Deck~%")
     (format t "3) Shuffle Deck~%")
     (format t "4) Play Solitarie~%")
-    (format t "5) Exit~%"))
-
+    (format t "5) Exit~%")
+    (terpri))
+    
 ; Print menu
 (print-menu)
 ; Get user choice for menu
 (format t "Please enter your choice (1-5): ")
 (setq menuChoice (read))
 
-; Branch to menu selection
-(case menuChoice 
-    (1 (format t "You selected New Deck~%"))
-    (2 (format t "You selected Display Deck~%"))
-    (3 (format t "You selected Shuffle Deck~%"))
-    (4 (format t "You selected Play Solitarie~%"))
-    (5 (format t "You selected Exit~%")))
+; Loop menu options until user exits
+(loop
+    (when (eq menuChoice 5) (return))
+    ; Branch to menu selection
+    (case menuChoice 
+        (1 (format t "You selected New Deck~%"))
+        (2 (format t "You selected Display Deck~%"))
+        (3 (format t "You selected Shuffle Deck~%"))
+        (4 (format t "You selected Play Solitarie~%"))
+        (5 (format t "You selected Exit~%")))
+
+    ; Print menu
+    (print-menu)
+    ; Get user choice for menu
+    (format t "Please enter your choice (1-5): ")
+    (setq menuChoice (read))
+)
