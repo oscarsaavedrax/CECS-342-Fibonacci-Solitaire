@@ -44,6 +44,15 @@
     (format t "New Deck initialized~%")
     (format t "Ready to play!~%")
     (terpri))
+
+; Function to display the deck
+(defun display-deck (deck)
+    (format t "Displaying Deck~%")
+    (terpri)
+    (if (eq deck nil)
+        (print-deck *new-deck*)
+        (print-deck deck))
+    (terpri))
     
 ; Print menu
 (print-menu)
@@ -58,7 +67,7 @@
     ; Branch to menu selection
     (case menu-choice 
         (1 (selected-new-deck *new-deck*))
-        (2 (format t "You selected Display Deck~%"))
+        (2 (display-deck *playing-deck*))
         (3 (format t "You selected Shuffle Deck~%"))
         (4 (format t "You selected Play Solitarie~%"))
         (5 ()))
