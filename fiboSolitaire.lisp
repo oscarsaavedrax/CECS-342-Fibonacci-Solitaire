@@ -53,6 +53,18 @@
         (print-deck *new-deck*)
         (print-deck deck))
     (terpri))
+
+
+; Function to shuffle the deck
+(defun shuffle-deck (deck)
+    (format t "Shuffling the Deck~%")
+    (format t "Deck Shuffled.~%")
+    (terpri)
+    (loop with l = (length deck)
+        for i below l
+        do (rotatef (nth i deck)
+                    (nth (random l) deck)))
+        deck)
     
 ; Print menu
 (print-menu)
@@ -68,7 +80,7 @@
     (case menu-choice 
         (1 (selected-new-deck *new-deck*))
         (2 (display-deck *playing-deck*))
-        (3 (format t "You selected Shuffle Deck~%"))
+        (3 (shuffle-deck *playing-deck*))
         (4 (format t "You selected Play Solitarie~%"))
         (5 ()))
 
